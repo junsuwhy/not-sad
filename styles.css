@@ -42,12 +42,12 @@
 
 .demo-content {
   border-radius: 2px;
-  padding: 80px 56px;
+/*  padding: 80px 56px;*/
   margin-bottom: 80px;
 }
 
 .demo-layout.is-small-screen .demo-content {
-  padding: 40px 28px;
+/*  padding: 40px 28px;*/
 }
 
 .demo-content h3 {
@@ -60,4 +60,7 @@
 
 .demo-footer .mdl-mini-footer--link-list a {
   font-size: 13px;
+}
+.demo-content>h3,.demo-content>h4{
+  text-align: center;
 }
