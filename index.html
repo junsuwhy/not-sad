@@ -84,6 +84,7 @@
           <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
             
             <h3>我不難過 : 面試幫手</h3>
+            <h4><input class="mdl-textfield__input" type="text" id="company" style="text-align: center;" placeholder="我面試的公司是"/></h4>
             <h4>我面試的是 <input type="radio" name="job" id="job-1" value="正職"/><label for="job-1">正職</label>
 <input type="radio" name="job" id="job-2" value="工讀"/><label for="job-2">工讀</label>
 <input type="radio" name="job" id="job-3" value="派遺"/><label for="job-3">派遺</label>
@@ -131,7 +132,7 @@
 {"title":"開會開太久",options:{
 "y":"不會","n":"會"
 }}]'>
-                <div ng-repeat="rule in rules" class="each-rule {{rule.style}}">
+                <div ng-repeat="rule in rules" class="each-rule {{rule.style}}" ng-click="ctl.clearStyle(rule)">
                     <h4>{{rule.title}}                  
                     </h4><a ng-if="rule.ref_page" href="{{rule.ref_page}}" class="ref-link" target="_blank">參考連結</a>
                     <div ng-if="rule.options" class="yn-div">
@@ -150,7 +151,10 @@
                 app.controller('MgCtrl',function(){
                     this.setStyle=function(rule, style_value){
                         rule.style = style_value;
-//                        alert(rule.title);
+//                      alert(rule.title);
+                    }
+                    this.clearStyle=function(rule){
+                        rule.style = "";
                     }
                 });
             </script>
