@@ -132,7 +132,7 @@
 {"title":"開會開太久",options:{
 "y":"不會","n":"會"
 }}]'>
-                <div ng-repeat="rule in rules" class="each-rule {{rule.style}}" ng-click="ctl.clearStyle(rule)">
+                <div ng-repeat="rule in rules" class="each-rule {{rule.style}}">
                     <h4>{{rule.title}}                  
                     </h4><a ng-if="rule.ref_page" href="{{rule.ref_page}}" class="ref-link" target="_blank">參考連結</a>
                     <div ng-if="rule.options" class="yn-div">
@@ -191,7 +191,7 @@
         </footer>
       </main>
     </div>
-    <a href="https://github.com/google/material-design-lite/blob/master/templates/article/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
+    <a href="javascript:void(0);" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">送出資料給我們</a>
     <script src="../../material.min.js"></script>
   </body>
 </html>
