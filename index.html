@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-tw">
+<html lang="zh-tw" ng-app="page">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,10 +43,12 @@
     }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/script.js"></script>
     
+    
   </head>
-  <body ng-app="page">
+  <body ng-controller="MgCtrl as ctl">
   <header>
   <div class="logo"><img src="img/logo.png" alt="我不難過 | 好工作讓你好開心"></div>
       <ul class="menu-bar">
@@ -72,19 +74,34 @@
           <img src="img/index-icon3.png" alt="合格企業" class="feature-img">
           <h3 class="feature-title">合格企業</h3>
           <p class="feature-body">隨時檢測你的工作<br>
-          是否符合基本權益</p>
+              是否符合基本權益</p>
       </div>
+      
+      
+      <ul class='int-job-type'><h3>我面試的是</h3> <br>
+      <li><input type="radio" name="job" id="job-1" value="正職"/><label for="job-1"><img src="img/career.png" alt=""><br>正職</label></li><li>
+<input type="radio" name="job" id="job-2" value="工讀"/><label for="job-2"><img src="img/partime.png" alt=""><br>工讀</label></li><li>
+<input type="radio" name="job" id="job-3" value="派遺"/><label for="job-3"><img src="img/outsourcing.png" alt=""><br>派遺</label>
+             </li>
+              </ul>
       </div>
   
-  <div ng-controller="MgCtrl as ctl" class='contents'>
-    <div ng-repeat="rule in ctl.rules" class="each-rule {{rule.style}}">
-        <h4>{{rule.title}}</h4>
-        <a ng-if="rule.ref_page" href="{{rule.ref_page}}" class="ref-link" target="_blank">參考連結</a>
+  <div  class='contents'>
+   
+  <h4 class='tip'>面試前記得打開手機 複習一下該有的權利喔</h4>
+   
+   <h4 class="comp-name" ><input class="mdl-textfield__input" type="text" id="company" style="text-align: center;" placeholder="我面試的公司是"/></h4>
+            
+   
+    <div ng-repeat="rule in ctl.rules" class="{{rule.getStyle()}}">
+        <h4>{{rule.title}}<a ng-if="rule.ref_page" href="{{rule.ref_page}}" class="ref-link" target="_blank">參考連結</a></h4>
         <div ng-if="rule.options" class="yn-div">
-        <a href="javascript:void(0);" ng-click="ctl.setStyle(rule,'mdl-color--blue-200')" class="btn btn-yes">{{rule.options.y}}</a>
-        <a href="javascript:void(0);" ng-click="ctl.setStyle(rule,'mdl-color--red-200')" class="btn btn-no">{{rule.options.n}}</a>
+        <a href="javascript:void(0);" ng-click="ctl.rmStyle(rule,'rule-selected-no');ctl.addStyle(rule,'rule-selected-yes');" class="btn btn-yes">{{rule.options.y}}</a>
+        <a href="javascript:void(0);" ng-click="ctl.rmStyle(rule,'rule-selected-yes');ctl.addStyle(rule,'rule-selected-no');" class="btn btn-no">{{rule.options.n}}</a>
         </div>
         </div>
+        <a href="javascript:void(0);" class="submit">提交</a>
+        
 </div><!-- ng-controller MgCtrl -->
  
  <footer>

@@ -45,15 +45,69 @@ var all_rules=[
 "y":"不會","n":"會"
 }}];
 
+for(var i = 0;i < all_rules.length;i++){
+    all_rules[i].className = [];
+    all_rules[i].getStyle = function(){
+        var str = "";
+        for(var j = 0;j < this.className.length;j++){
+            str += " "+this.className[j];
+        }
+        if(typeof this.options == 'undefined'){
+            str += " rule-section-title";
+        }else{
+            str += " each-rule";
+        }
+        return str;
+    }
+}
+
  var app = angular.module("page", []);
     app.controller('MgCtrl',function(){
         this.rules = all_rules;
-        this.setStyle=function(rule, style_value){
-            rule.style = style_value;
-                      alert(rule.title);
-            console.log($scope);
+        this.addStyle=function(rule, style_value){
+            console.log(rule);
+            rule.className.push(style_value);
         }
-        this.clearStyle=function(rule){
-            rule.style = "";
+        this.rmStyle=function(rule, style_value){
+            for(var i = 0;i < rule.className.length;i++){
+                if(rule.className[i]==style_value){
+                    rule.className.splice(i);
+                }
+            }
         }
     });
+
+
+
+$(function(){
+    $('.feature-item').click(function(){
+        var $this = $(this);
+        console.log($this.parent());
+        $('.feature-item').css('opacity',0);
+        $this.css('opacity',1);
+        setTimeout(function(){
+            $('.int-job-type').show();
+            $('.int-job-type').height(149);
+        },700);
+    });
+    
+    $('.int-job-type li').click(function(){
+        $('.int-job-type li').removeClass('selected');
+        $(this).addClass('selected');
+        $('.contents').show();
+        $('.contents').css('height',function(){
+            var height = 0;
+            height += parseInt($('.contents').css('padding-top'));
+            height += parseInt($('.contents').css('padding-bottom'));
+            
+            $('.contents').children().each(function(){
+                height+=$(this).height();
+            });
+            height+='px';
+            setTimeout(function(){
+                $('.contents').css('height',"auto");
+            },1000);
+            return height;
+        });
+    });
+});
