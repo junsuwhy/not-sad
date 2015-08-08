@@ -1,0 +1,19 @@
+header>
+
+div.logo
+
+ul.menu-bar>li.menu-item
+
+div.features>div.feature-item>
+img.feature-img + h3.feature-title + p.feature-body
+
+footer>
+ul.footer-menu>lifooter-item
+p.reserved-text
+
+
+background: #DAEF4C;
+
+.menu-item{
+  background: #35AAE0;
+}

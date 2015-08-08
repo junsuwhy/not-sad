@@ -1,0 +1,200 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Material Design Lite</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link href='//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="material.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+  </head>
+  <body ng-app="page">
+    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+      <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">我不難過 : 面試小幫手</span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search" />
+              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="demo-ribbon"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            
+            <h3>我不難過 : 面試幫手</h3>
+            <h4><input class="mdl-textfield__input" type="text" id="company" style="text-align: center;" placeholder="我面試的公司是"/></h4>
+            <h4>我面試的是 <input type="radio" name="job" id="job-1" value="正職"/><label for="job-1">正職</label>
+<input type="radio" name="job" id="job-2" value="工讀"/><label for="job-2">工讀</label>
+<input type="radio" name="job" id="job-3" value="派遺"/><label for="job-3">派遺</label>
+              </h4>
+            <div ng-controller="MgCtrl as ctl" ng-init='rules=[
+{"title":"保險問題"},
+{"title":"有沒有勞健保",options:{
+"y":"有","n":"沒有"
+}},
+{"title":"有沒有勞退",options:{
+"y":"有","n":"沒有"
+}},
+{"title":"工時問題"},
+{"title":"每週工時多少",options:{
+"y":"小於 40 小時","n":"超過 40 小時"
+}},
+{"title":"每月加班工時",options:{
+"y":"小於 54 小時","n":"超過 54 小時"
+}},
+{"title":"假日正常化"},
+{"title":"有沒有產假?",options:{
+"y":"有","n":"沒有"
+}},
+{"title":"產假是否給薪",options:{
+"y":"有","n":"沒有"
+}},
+{"title":"國定假日有幾天 ?",options:{
+"y":" 29 天","n":"未滿 29 天"
+},
+"ref_page":"http://momoge.blogspot.tw/2015/03/blog-post_25.html"
+},
+{"title":"薪水問題"},
+{"title":"時薪、月薪超過最低薪資",options:{
+"y":"有","n":"沒有"
+}},
+{"title":"薪水是否準時發放",options:{
+"y":"是","n":"沒有"
+}},
+{"title":"有否被訂罰則扣薪",options:{
+"y":"沒有","n":"有"
+}},
+{"title":"加班類型"},
+{"title":"隱性加班（line,FB...) ",options:{
+"y":"沒有","n":"有"
+},
+"ref_page":"http://www.coolloud.org.tw/node/80655",
+},
+{"title":"開會開太久",options:{
+"y":"不會","n":"會"
+}}]'>
+                <div ng-repeat="rule in rules" class="each-rule {{rule.style}}">
+                    <h4>{{rule.title}}                  
+                    </h4><a ng-if="rule.ref_page" href="{{rule.ref_page}}" class="ref-link" target="_blank">參考連結</a>
+                    <div ng-if="rule.options" class="yn-div">
+                    <a href="javascript:void(0);" ng-click="ctl.setStyle(rule,'mdl-color--blue-200')" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--blue-400 mdl-color-text--accent-contrast">{{rule.options.y}}</a>
+                    <a href="javascript:void(0);" ng-click="ctl.setStyle(rule,'mdl-color--red-200')" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">{{rule.options.n}}</a>
+                    </div>
+                    </div>
+                    </label>
+                    
+                    
+                    </li>
+                </div>
+            </div>
+            <script>
+                var app = angular.module("page", []);
+                app.controller('MgCtrl',function(){
+                    this.setStyle=function(rule, style_value){
+                        rule.style = style_value;
+//                      alert(rule.title);
+                    }
+                    this.clearStyle=function(rule){
+                        rule.style = "";
+                    }
+                });
+            </script>
+            <style>
+                .each-rule{
+                    margin: none;
+                    padding: 20px;
+                }
+                .ref-link{
+                    float:right;
+                }
+                .yn-div{
+/*
+                    width: 50%;
+                    margin: 0 auto;
+*/
+                }
+                .yn-div a:nth-child(2){
+/*                    margin-left: 20px;*/
+                }
+        
+            </style>
+            
+          </div>
+        </div>
+        <footer class="demo-footer mdl-mini-footer">
+          <div class="mdl-mini-footer--left-section">
+            <ul class="mdl-mini-footer--link-list">
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Privacy and Terms</a></li>
+              <li><a href="#">User Agreement</a></li>
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <a href="javascript:void(0);" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">送出</a>
+    <script src="../../material.min.js"></script>
+  </body>
+</html>
