@@ -121,10 +121,14 @@ a:hover{
     padding: 20px 0
 }
 .comp-name{
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
-
+#company{
+    border: 1px solid gray;
+    line-height: 27px;
+    font-size: 19px;
+}
 
 
 .rule-section-title h4{
@@ -195,6 +199,14 @@ div.rule-selected-no{
     color: white;
     line-height: 27px;
     font-size: 17px;
+}
+
+
+.thankyou-content{
+    padding: 20px 0 40px;
+}
+.thankyou-content p{
+    line-height: 27px;
 }
 
 
