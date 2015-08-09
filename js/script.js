@@ -21,7 +21,7 @@ var all_rules=[
 "y":"有","n":"沒有"
 }},
 {"title":"國定假日有幾天 ?",options:{
-"y":" 29 天","n":"未滿 29 天"
+"y":" 19 天","n":"未滿 19 天"
 },
 "ref_page":"http://momoge.blogspot.tw/2015/03/blog-post_25.html"
 },
