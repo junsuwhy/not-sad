@@ -82,11 +82,11 @@ a:hover{
     position: absolute;
     width: 80px;
     height: 80px;
-    left: 32%;
+    left: 33%;
     top: 8%;
     margin:0 auto;
     content: " ";
-    background: #fed;
+    background: #f9ffd2;
     -webkit-transition: all .3s; /* Safari */
     transition: all .3s;
     -webkit-border-radius: 50%;
@@ -236,9 +236,15 @@ div.rule-selected-no{
 }
 .thankyou-content p{
     line-height: 27px;
+    padding-top: 30px
+}
+.thankyou-content img{
+    padding-top: 30px;
 }
 
-
+footer{
+    margin-top: 60px;
+}
 .footer-item{
     display: inline;
 }
