@@ -41,9 +41,20 @@ var all_rules=[
 },
 "ref_page":"http://www.coolloud.org.tw/node/80655",
 },
-{"title":"開會開太久",options:{
-"y":"不會","n":"會"
-}}];
+{"title":"加班兩個小時內，每小時工資要加 1/3 以上",options:{
+"y":"有","n":"沒有"
+}},
+{"title":"加班第 2 小時到第 4 個小時，每小時工資要 2/3 以上",options:{
+"y":"有","n":"沒有"
+}},
+{"title":"天災事變或突發事件，工資要加倍。",options:{
+"y":"有","n":"沒有"
+}},
+{"title":"面試情境"},
+{"title":"面試時不能要求隱私資料：如身分證字號",options:{
+"y":"沒有","n":"有"
+},
+ "ref_page":"http://www.taiwanjobs.gov.tw/internet/jobwanted/docDetail.aspx?uid=248&docid=25218"}];
 
 for(var i = 0;i < all_rules.length;i++){
     all_rules[i].className = [];
